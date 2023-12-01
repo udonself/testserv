@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "testservice"
+version = "0.1.0"
+description = ""
+authors = ["udonself <ilyaayil2625@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+sqlalchemy = "^2.0.23"
+uvicorn = "^0.24.0.post1"
+fastapi = "^0.104.1"
+python-dotenv = "^1.0.0"
+passlib = "^1.7.4"
+psycopg2 = "^2.9.9"
+python-jose = "^3.3.0"
+bcrypt = "^4.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
