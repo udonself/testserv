@@ -1,10 +1,5 @@
-import json
-
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
-from sqlalchemy.orm import declarative_base
-
-
-Base = declarative_base()
+from sqlalchemy import Column, Integer, String, ForeignKey
+from db import Base
 
 
 class User(Base):
@@ -34,7 +29,7 @@ class RoleOfUser(Base):
     __tablename__ = "user_roles" 
 
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"))
-    service_id = Column(Integer, ForeignKey("service.id"))
-    role_id = Column(Integer, ForeignKey("roles.id"))
+    user_id = Column(Integer, ForeignKey(f"{User.__tablename__}.id"))
+    service_id = Column(Integer, ForeignKey(f"{Service.__tablename__}.id"))
+    role_id = Column(Integer, ForeignKey(f"{Role.__tablename__}.id"))
 
